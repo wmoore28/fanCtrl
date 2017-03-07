@@ -1,0 +1,27 @@
+# define epid record
+record(epid, "$(P):fanCtrl") {
+    field(INP,  "$(P):t_avg")
+    field(OUTL, "$(P):fanNominalSpeed PP NMS")
+    field(SCAN, "10 second")
+    field(KP,   "-150")
+    field(KI,   ".2")
+    field(KD,   "0")
+    field(LOPR, "2000")
+    field(HOPR, "6000")
+    field(DRVL, "2000")
+    field(DRVH, "6000")
+    field(PREC, "1")
+    field(STPL, "0")
+}
+
+record(sub, "$(P):temp") {
+    field(INAM, "get_tempInit")
+    field(SNAM, "get_temp")
+    field(SCAN, "1 second")
+    field(PREC, "1")
+    field(EGU,  "C")
+}
+
+record(ao, "$(P):fanNominalSpeedTest") {
+    field(EGU, "rpm")
+}

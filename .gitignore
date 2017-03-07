@@ -1,0 +1,11 @@
+# editor backups
+*/
+*.swp
+
+# EPICS-specific
+bin/
+O.*/
+db/
+dbd/
+envPaths
+
